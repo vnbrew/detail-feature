@@ -9,6 +9,7 @@ import com.module.jetpack.compose.common.di.injectedViewModel
 import com.module.jetpack.compose.data.api.LocalDataProvider
 import com.module.jetpack.compose.detail.api.DetailEntry
 import com.module.jetpack.compose.detail.impl.di.DaggerDetailComponent
+import com.module.jetpack.compose.detail.impl.ui.DetailScreen
 import javax.inject.Inject
 
 class DetailEntryImpl @Inject constructor() : DetailEntry() {
@@ -23,6 +24,7 @@ class DetailEntryImpl @Inject constructor() : DetailEntry() {
             DaggerDetailComponent.builder().dataProvider(LocalDataProvider.current)
                 .build().viewModel
         }
-
+        DetailScreen(viewModel = viewModel, onUserSelect = {
+        })
     }
 }

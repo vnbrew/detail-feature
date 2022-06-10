@@ -5,5 +5,7 @@ import com.module.jetpack.compose.common.ComposableFeatureEntry
 abstract class DetailEntry : ComposableFeatureEntry {
     final override val featureRoute = "detail-feature"
 
-    fun destination() = featureRoute
+    fun route() = featureRoute
+    fun startDestination() = "$featureRoute/"
+    fun startDestinationInParent(parentName: String) = "$parentName$featureRoute/"
 }
